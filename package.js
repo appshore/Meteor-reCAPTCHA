@@ -2,7 +2,7 @@ Package.describe({
     name: "appshore:recaptcha",
     summary: "Implementation of Google reCAPTCHA V2 for Meteor",
     git: "https://github.com/appshore/Meteor-reCAPTCHA.git",
-    version: "2.0.6",
+    version: "2.1.0",
     license: "MIT"
 });
 
@@ -12,10 +12,10 @@ Package.onUse(function(api) {
 
     api.use([
         'templating',
-        'handlebars',
+        'handlebars'
     ], 'client');
     api.use([
-        'http',
+        'http'
     ], 'server');
 
     api.addFiles(['server/server.js'], 'server');

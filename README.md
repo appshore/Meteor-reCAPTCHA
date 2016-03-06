@@ -18,16 +18,23 @@ $ meteor add appshore:recaptcha
 
 ###On The Client
 
-Add your reCAPTCHA public key (from Google) to the package. Do this in client-side code.
+Add your reCAPTCHA public key (from Google) to the package. Do this in client-side code. Config values listed below are package defaults
 
 ``` javascript
 Meteor.startup(function() {
     reCAPTCHA.config({
-        theme: 'light'  // 'light' default or 'dark'
-        publickey: 'your_public_key_from_google'
+        sitekey: 'your_public_site_key_from_google', //REQUIRED
+        theme: 'light', //OPTIONAL. <light|dark> Specifies the color theme of the widget
+        type: 'image', //OPTIONAL. <audio|image> Specifies the type of captcha to serve
+        size: 'normal', //OPTIONAL. <normal|compact> Specifies the type of captcha to serve
+        callback: function(val) {}, //OPTIONAL. The name of your callback function to be executed when the user submits a successful CAPTCHA response. The user's response, g-recaptcha-response, will be the input for your callback function.
+        tabindex: 0, //OPTIONAL. The tabindex of the widget and challenge. If other elements in your page use tabindex, it should be set to make user navigation easier.
+        "expired-callback": function() {} //OPTIONAL. The name of your callback function to be executed when the recaptcha response expires and the user needs to solve a new CAPTCHA.
     });
 });
 ```
+
+[Official documentation](https://developers.google.com/recaptcha/docs/display#render_param)
 
 ###On The Server
 
