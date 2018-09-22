@@ -16,7 +16,7 @@ $ meteor add appshore:recaptcha
 
 ## Setup
 
-###On The Client
+### On The Client
 
 Add your reCAPTCHA public key (from Google) to the package. Do this in client-side code. Config values listed below are package defaults
 
@@ -36,7 +36,7 @@ Meteor.startup(function() {
 
 [Official documentation](https://developers.google.com/recaptcha/docs/display#render_param)
 
-###On The Server
+### On The Server
 
 Add your reCAPTCHA private key (from Google) to the package. Do this in server-only code (not just an 'isServer' block) to keep your key secret.
 
